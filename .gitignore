@@ -1,0 +1,6 @@
+# Ignorar archivos de configuración de Visual Studio
+.vs/
+*.suo
+*.user
+*.dbmdl
+*.log

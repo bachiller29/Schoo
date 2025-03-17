@@ -94,3 +94,5 @@ C:\Repo\Test\Back\Schoo\Finanzautos.Shool\FinanzautoShool.WebApi\obj\Debug\net8.
 C:\Repo\Test\Back\Schoo\Finanzautos.Shool\FinanzautoShool.WebApi\obj\Debug\net8.0\FinanzautoShool.WebApi.pdb
 C:\Repo\Test\Back\Schoo\Finanzautos.Shool\FinanzautoShool.WebApi\obj\Debug\net8.0\FinanzautoShool.WebApi.genruntimeconfig.cache
 C:\Repo\Test\Back\Schoo\Finanzautos.Shool\FinanzautoShool.WebApi\obj\Debug\net8.0\ref\FinanzautoShool.WebApi.dll
+C:\Repo\Test\Back\Schoo\Finanzautos.Shool\FinanzautoShool.WebApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Repo\Test\Back\Schoo\Finanzautos.Shool\FinanzautoShool.WebApi\obj\Debug\net8.0\FinanzautoShool.WebApi.MvcApplicationPartsAssemblyInfo.cs

@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "FinanzautoShool.WebApi.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "FinanzautoShool.Domain.Dto.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "FinanzautoShool.WebApi.Controllers.CourseController",
     "Method": "CreateCourse",
     "RelativePath": "api/Course/CreateCourse",

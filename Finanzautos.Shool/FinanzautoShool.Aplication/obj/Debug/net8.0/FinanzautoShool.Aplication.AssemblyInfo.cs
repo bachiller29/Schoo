@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FinanzautoShool.Aplication")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9bba7ac48902bfe973af270dda1a10822a804861")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d06359585a46b81dff25983ed68c85c40cc8b644")]
 [assembly: System.Reflection.AssemblyProductAttribute("FinanzautoShool.Aplication")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FinanzautoShool.Aplication")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FinanzautoShool.Aplication.Services.CourseService.Interface;
+﻿using FinanzautoShool.Aplication.Services.CourseService.Interface;
 using FinanzautoShool.Aplication.Services.QualificationService.Interface;
 using FinanzautoShool.Aplication.Services.StudentService.Interface;
 using FinanzautoShool.Domain.Dto;
@@ -38,7 +33,7 @@ namespace FinanzautoShool.Aplication.Services.QualificationService.Service
 
             if (courseExists == null)
             {
-                throw new ArgumentException($"El profesor con ID {qualificationDto.CourseId} no existe.");
+                throw new ArgumentException($"El curso con ID {qualificationDto.CourseId} no existe.");
             }
 
             var qualification = new Qualification

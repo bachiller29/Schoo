@@ -8,5 +8,5 @@ public interface ICourseService
     Task<IEnumerable<CourseDto>> GetAllCourse();
     Task<CourseDto> GetCourseById(int id);
     Task<DeleteResult> DeleteCourse(int id);
-    Task<bool> UpdateCourse(int id, UpdateCourseDto updateCourseDto);
+    Task<int?> UpdateCourse(int id, UpdateCourseDto updateCourseDto);
 }

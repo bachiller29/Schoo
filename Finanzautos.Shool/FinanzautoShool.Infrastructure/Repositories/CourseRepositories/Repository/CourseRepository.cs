@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FinanzautoShool.Infrastructure.Repositories.CourseRepositories.Repository
 {
-    internal class CourseRepository : ICourseRepository
+    public class CourseRepository : ICourseRepository
     {
         private readonly SchoolDbContext _context;
 

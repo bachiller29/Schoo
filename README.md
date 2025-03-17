@@ -11,7 +11,7 @@ Antes de clonar el repositorio, asegúrate de tener instalados los siguientes pr
 📌 [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)  
 🛢️ [SQL Server 2014 o superior](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)  
 🖥️ [Visual Studio 2022](https://visualstudio.microsoft.com/) con la carga de trabajo de **desarrollo en .NET**  
-🔗 [Git]([https://git-scm.com/](https://github.com/bachiller29/Schoo.git))  
+🔗 [Git](https://git-scm.com/)  
 💽 [Postman](https://www.postman.com/) 
 
 ---

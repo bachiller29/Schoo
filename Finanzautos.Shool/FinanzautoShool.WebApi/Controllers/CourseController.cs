@@ -16,6 +16,24 @@ namespace FinanzautoShool.WebApi.Controllers
             _courseService = courseService;
         }
 
+        /// <summary>
+        /// Crea un nuevo curso en el sistema.
+        /// </summary>
+        /// <param name="createCourse">Objeto que contiene la información del curso a crear.</param>
+        /// <returns>
+        /// Retorna el curso creado con su ID.
+        /// </returns>
+        /// <response code="201">Curso creado exitosamente.</response>
+        /// <response code="400">Datos de entrada inválidos.</response>
+        /// <response code="500">Error interno del servidor.</response>
+        /// <example>
+        /// Ejemplo de petición JSON:
+        /// {
+        ///     "courseName": "Matemáticas",
+        ///     "description": "Curso de matemáticas avanzadas",
+        ///     "teacherId": 1
+        /// }
+        /// </example>
         [HttpPost("CreateCourse")]
         public async Task<ActionResult<CourseDto>> CreateCourse([FromBody] CreateCourseDto createCourse)
         {
@@ -34,6 +52,22 @@ namespace FinanzautoShool.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Obtiene la lista de todos los cursos disponibles.
+        /// </summary>
+        /// <returns>Lista de cursos registrados en el sistema.</returns>
+        /// <response code="200">Lista de cursos obtenida correctamente.</response>
+        /// <example>
+        /// Ejemplo de respuesta JSON:
+        /// [
+        ///     {
+        ///         "id": 1,
+        ///         "courseName": "Matemáticas",
+        ///         "description": "Curso de matemáticas avanzadas",
+        ///         "teacherId": 1
+        ///     }
+        /// ]
+        /// </example>
         [HttpGet("GetAllCourse")]
         public async Task<ActionResult<IEnumerable<TeacherDto>>> GetAllCourse()
         {
@@ -41,6 +75,22 @@ namespace FinanzautoShool.WebApi.Controllers
             return Ok(courses);
         }
 
+        /// <summary>
+        /// Obtiene la información de un curso específico por su ID.
+        /// </summary>
+        /// <param name="id">ID del curso a consultar.</param>
+        /// <returns>Información del curso solicitado.</returns>
+        /// <response code="200">Curso encontrado.</response>
+        /// <response code="404">Curso no encontrado.</response>
+        /// <example>
+        /// Ejemplo de respuesta JSON:
+        /// {
+        ///     "id": 1,
+        ///     "courseName": "Matemáticas",
+        ///     "description": "Curso de matemáticas avanzadas",
+        ///     "teacherId": 1
+        /// }
+        /// </example>
         [HttpGet("GetCourseById/{id}")]
         public async Task<ActionResult<TeacherDto>> GetCourseById(int id)
         {
@@ -49,6 +99,20 @@ namespace FinanzautoShool.WebApi.Controllers
             return Ok(course);
         }
 
+        /// <summary>
+        /// Elimina un curso por su ID.
+        /// </summary>
+        /// <param name="id">ID del curso a eliminar.</param>
+        /// <returns>Mensaje de confirmación o error.</returns>
+        /// <response code="200">Curso eliminado exitosamente.</response>
+        /// <response code="404">Curso no encontrado.</response>
+        /// <response code="500">Error interno al intentar eliminar el curso.</response>
+        /// <example>
+        /// Ejemplo de respuesta JSON:
+        /// {
+        ///     "message": "El curso fue eliminado correctamente."
+        /// }
+        /// </example>
         [HttpDelete("DeleteCourse/{id}")]
         public async Task<IActionResult> DeleteCourse(int id)
         {
@@ -63,6 +127,24 @@ namespace FinanzautoShool.WebApi.Controllers
             return Ok(result);
         }
 
+        /// <summary>
+        /// Actualiza la información de un curso existente.
+        /// </summary>
+        /// <param name="id">ID del curso a actualizar.</param>
+        /// <param name="updateCourseDto">Objeto con los nuevos datos del curso.</param>
+        /// <returns>Mensaje de confirmación o error.</returns>
+        /// <response code="200">Curso actualizado correctamente.</response>
+        /// <response code="400">Datos de entrada inválidos.</response>
+        /// <response code="404">Curso no encontrado.</response>
+        /// <response code="500">Error interno del servidor.</response>
+        /// <example>
+        /// Ejemplo de petición JSON:
+        /// {
+        ///     "courseName": "Física",
+        ///     "description": "Curso de física cuántica",
+        ///     "teacherId": 2
+        /// }
+        /// </example>
         [HttpPut("UpdateCourse/{id}")]
         public async Task<IActionResult> UpdateCourse(int id, [FromBody] UpdateCourseDto updateCourseDto)
         {

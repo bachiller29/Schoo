@@ -10,7 +10,9 @@
         "tags": [
           "Auth"
         ],
+        "summary": "Inicia sesión en el sistema y genera un token de autenticación.",
         "requestBody": {
+          "description": "Objeto que contiene el nombre de usuario y contraseña.",
           "content": {
             "application/json": {
               "schema": {
@@ -31,7 +33,10 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Autenticación exitosa. Se devuelve un token JWT."
+          },
+          "401": {
+            "description": "Credenciales incorrectas. No autorizado."
           }
         }
       }
@@ -41,7 +46,9 @@
         "tags": [
           "Course"
         ],
+        "summary": "Crea un nuevo curso en el sistema.",
         "requestBody": {
+          "description": "Objeto que contiene la información del curso a crear.",
           "content": {
             "application/json": {
               "schema": {
@@ -80,6 +87,15 @@
                 }
               }
             }
+          },
+          "201": {
+            "description": "Curso creado exitosamente."
+          },
+          "400": {
+            "description": "Datos de entrada inválidos."
+          },
+          "500": {
+            "description": "Error interno del servidor."
           }
         }
       }
@@ -89,9 +105,10 @@
         "tags": [
           "Course"
         ],
+        "summary": "Obtiene la lista de todos los cursos disponibles.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Lista de cursos obtenida correctamente.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -127,10 +144,12 @@
         "tags": [
           "Course"
         ],
+        "summary": "Obtiene la información de un curso específico por su ID.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "ID del curso a consultar.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -140,7 +159,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Curso encontrado.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -158,6 +177,9 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Curso no encontrado."
           }
         }
       }
@@ -167,10 +189,12 @@
         "tags": [
           "Course"
         ],
+        "summary": "Elimina un curso por su ID.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "ID del curso a eliminar.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -180,7 +204,13 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Curso eliminado exitosamente."
+          },
+          "404": {
+            "description": "Curso no encontrado."
+          },
+          "500": {
+            "description": "Error interno al intentar eliminar el curso."
           }
         }
       }
@@ -190,10 +220,12 @@
         "tags": [
           "Course"
         ],
+        "summary": "Actualiza la información de un curso existente.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "ID del curso a actualizar.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -202,6 +234,7 @@
           }
         ],
         "requestBody": {
+          "description": "Objeto con los nuevos datos del curso.",
           "content": {
             "application/json": {
               "schema": {
@@ -222,7 +255,16 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Curso actualizado correctamente."
+          },
+          "400": {
+            "description": "Datos de entrada inválidos."
+          },
+          "404": {
+            "description": "Curso no encontrado."
+          },
+          "500": {
+            "description": "Error interno del servidor."
           }
         }
       }
@@ -232,7 +274,9 @@
         "tags": [
           "Qualification"
         ],
+        "summary": "Crea una nueva calificación en el sistema.",
         "requestBody": {
+          "description": "Objeto que contiene la información de la calificación a crear.",
           "content": {
             "application/json": {
               "schema": {
@@ -271,6 +315,15 @@
                 }
               }
             }
+          },
+          "201": {
+            "description": "Calificación creada exitosamente."
+          },
+          "400": {
+            "description": "Datos de entrada inválidos."
+          },
+          "500": {
+            "description": "Error interno del servidor."
           }
         }
       }
@@ -280,9 +333,10 @@
         "tags": [
           "Qualification"
         ],
+        "summary": "Obtiene la lista de todas las calificaciones registradas.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Lista obtenida correctamente.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -318,10 +372,12 @@
         "tags": [
           "Qualification"
         ],
+        "summary": "Obtiene la información de una calificación específica por su ID.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "ID de la calificación a consultar.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -331,7 +387,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Calificación encontrada.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -349,6 +405,9 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Calificación no encontrada."
           }
         }
       }
@@ -358,10 +417,12 @@
         "tags": [
           "Qualification"
         ],
+        "summary": "Elimina una calificación por su ID.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "ID de la calificación a eliminar.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -371,7 +432,13 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Calificación eliminada exitosamente."
+          },
+          "404": {
+            "description": "Calificación no encontrada."
+          },
+          "500": {
+            "description": "Error interno al intentar eliminar la calificación."
           }
         }
       }
@@ -381,10 +448,12 @@
         "tags": [
           "Qualification"
         ],
+        "summary": "Actualiza la información de una calificación existente.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "ID de la calificación a actualizar.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -393,6 +462,7 @@
           }
         ],
         "requestBody": {
+          "description": "Objeto con los nuevos datos de la calificación.",
           "content": {
             "application/json": {
               "schema": {
@@ -413,7 +483,16 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Calificación actualizada correctamente."
+          },
+          "400": {
+            "description": "Datos de entrada inválidos."
+          },
+          "404": {
+            "description": "Calificación no encontrada."
+          },
+          "500": {
+            "description": "Error interno del servidor."
           }
         }
       }
@@ -423,7 +502,9 @@
         "tags": [
           "Student"
         ],
+        "summary": "Crea un nuevo estudiante en el sistema.",
         "requestBody": {
+          "description": "Objeto que contiene la información del estudiante a crear.",
           "content": {
             "application/json": {
               "schema": {
@@ -462,6 +543,15 @@
                 }
               }
             }
+          },
+          "201": {
+            "description": "Estudiante creado exitosamente."
+          },
+          "400": {
+            "description": "Datos de entrada inválidos."
+          },
+          "500": {
+            "description": "Error interno del servidor."
           }
         }
       }
@@ -471,9 +561,10 @@
         "tags": [
           "Student"
         ],
+        "summary": "Obtiene la lista de todos los estudiantes registrados.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Lista obtenida correctamente.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -509,10 +600,12 @@
         "tags": [
           "Student"
         ],
+        "summary": "Obtiene la información de un estudiante específico por su ID.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "ID del estudiante a consultar.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -522,7 +615,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Estudiante encontrado.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -540,6 +633,9 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Estudiante no encontrado."
           }
         }
       }
@@ -549,10 +645,12 @@
         "tags": [
           "Student"
         ],
+        "summary": "Elimina un estudiante por su ID.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "ID del estudiante a eliminar.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -562,7 +660,13 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Estudiante eliminado exitosamente."
+          },
+          "404": {
+            "description": "Estudiante no encontrado."
+          },
+          "500": {
+            "description": "Error interno al intentar eliminar el estudiante."
           }
         }
       }
@@ -572,10 +676,12 @@
         "tags": [
           "Student"
         ],
+        "summary": "Actualiza la información de un estudiante existente.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "ID del estudiante a actualizar.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -584,6 +690,7 @@
           }
         ],
         "requestBody": {
+          "description": "Objeto con los nuevos datos del estudiante.",
           "content": {
             "application/json": {
               "schema": {
@@ -604,7 +711,16 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Estudiante actualizado correctamente."
+          },
+          "400": {
+            "description": "Datos de entrada inválidos."
+          },
+          "404": {
+            "description": "Estudiante no encontrado."
+          },
+          "500": {
+            "description": "Error interno del servidor."
           }
         }
       }
@@ -614,7 +730,9 @@
         "tags": [
           "Teacher"
         ],
+        "summary": "Crea un nuevo profesor en el sistema.",
         "requestBody": {
+          "description": "Objeto que contiene la información del profesor a crear.",
           "content": {
             "application/json": {
               "schema": {
@@ -653,6 +771,15 @@
                 }
               }
             }
+          },
+          "201": {
+            "description": "Profesor creado exitosamente."
+          },
+          "400": {
+            "description": "Datos de entrada inválidos."
+          },
+          "500": {
+            "description": "Error interno del servidor."
           }
         }
       }
@@ -662,9 +789,10 @@
         "tags": [
           "Teacher"
         ],
+        "summary": "Obtiene la lista de todos los profesores registrados.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Lista obtenida correctamente.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -700,10 +828,12 @@
         "tags": [
           "Teacher"
         ],
+        "summary": "Obtiene la información de un profesor específico por su ID.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "ID del profesor a consultar.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -713,7 +843,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Profesor encontrado.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -731,6 +861,9 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Profesor no encontrado."
           }
         }
       }
@@ -740,10 +873,12 @@
         "tags": [
           "Teacher"
         ],
+        "summary": "Elimina un profesor por su ID.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "ID del profesor a eliminar.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -753,7 +888,13 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Profesor eliminado exitosamente."
+          },
+          "404": {
+            "description": "Profesor no encontrado."
+          },
+          "500": {
+            "description": "Error interno al intentar eliminar el profesor."
           }
         }
       }
@@ -763,10 +904,12 @@
         "tags": [
           "Teacher"
         ],
+        "summary": "Actualiza la información de un profesor existente.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "ID del profesor a actualizar.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -775,6 +918,7 @@
           }
         ],
         "requestBody": {
+          "description": "Objeto con los nuevos datos del profesor.",
           "content": {
             "application/json": {
               "schema": {
@@ -795,7 +939,16 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Profesor actualizado correctamente."
+          },
+          "400": {
+            "description": "Datos de entrada inválidos."
+          },
+          "404": {
+            "description": "Profesor no encontrado."
+          },
+          "500": {
+            "description": "Error interno del servidor."
           }
         }
       }

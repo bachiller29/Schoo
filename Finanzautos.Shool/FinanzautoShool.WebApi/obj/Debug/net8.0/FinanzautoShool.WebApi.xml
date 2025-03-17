@@ -1,0 +1,378 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FinanzautoShool.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:FinanzautoShool.WebApi.Controllers.AuthController.Login(FinanzautoShool.Domain.Dto.LoginRequest)">
+            <summary>
+            Inicia sesión en el sistema y genera un token de autenticación.
+            </summary>
+            <param name="request">Objeto que contiene el nombre de usuario y contraseña.</param>
+            <returns>
+            Retorna un token JWT si las credenciales son correctas.  
+            En caso contrario, devuelve un estado HTTP 401 (No autorizado).
+            </returns>
+            <response code="200">Autenticación exitosa. Se devuelve un token JWT.</response>
+            <response code="401">Credenciales incorrectas. No autorizado.</response>
+            <example>
+            Ejemplo de petición JSON:
+            {
+                "username": "admin",
+                "password": "admin"
+            }
+            </example>
+        </member>
+        <member name="M:FinanzautoShool.WebApi.Controllers.CourseController.CreateCourse(FinanzautoShool.Domain.Dto.CreateCourseDto)">
+            <summary>
+            Crea un nuevo curso en el sistema.
+            </summary>
+            <param name="createCourse">Objeto que contiene la información del curso a crear.</param>
+            <returns>
+            Retorna el curso creado con su ID.
+            </returns>
+            <response code="201">Curso creado exitosamente.</response>
+            <response code="400">Datos de entrada inválidos.</response>
+            <response code="500">Error interno del servidor.</response>
+            <example>
+            Ejemplo de petición JSON:
+            {
+                "courseName": "Matemáticas",
+                "description": "Curso de matemáticas avanzadas",
+                "teacherId": 1
+            }
+            </example>
+        </member>
+        <member name="M:FinanzautoShool.WebApi.Controllers.CourseController.GetAllCourse">
+            <summary>
+            Obtiene la lista de todos los cursos disponibles.
+            </summary>
+            <returns>Lista de cursos registrados en el sistema.</returns>
+            <response code="200">Lista de cursos obtenida correctamente.</response>
+            <example>
+            Ejemplo de respuesta JSON:
+            [
+                {
+                    "id": 1,
+                    "courseName": "Matemáticas",
+                    "description": "Curso de matemáticas avanzadas",
+                    "teacherId": 1
+                }
+            ]
+            </example>
+        </member>
+        <member name="M:FinanzautoShool.WebApi.Controllers.CourseController.GetCourseById(System.Int32)">
+            <summary>
+            Obtiene la información de un curso específico por su ID.
+            </summary>
+            <param name="id">ID del curso a consultar.</param>
+            <returns>Información del curso solicitado.</returns>
+            <response code="200">Curso encontrado.</response>
+            <response code="404">Curso no encontrado.</response>
+            <example>
+            Ejemplo de respuesta JSON:
+            {
+                "id": 1,
+                "courseName": "Matemáticas",
+                "description": "Curso de matemáticas avanzadas",
+                "teacherId": 1
+            }
+            </example>
+        </member>
+        <member name="M:FinanzautoShool.WebApi.Controllers.CourseController.DeleteCourse(System.Int32)">
+            <summary>
+            Elimina un curso por su ID.
+            </summary>
+            <param name="id">ID del curso a eliminar.</param>
+            <returns>Mensaje de confirmación o error.</returns>
+            <response code="200">Curso eliminado exitosamente.</response>
+            <response code="404">Curso no encontrado.</response>
+            <response code="500">Error interno al intentar eliminar el curso.</response>
+            <example>
+            Ejemplo de respuesta JSON:
+            {
+                "message": "El curso fue eliminado correctamente."
+            }
+            </example>
+        </member>
+        <member name="M:FinanzautoShool.WebApi.Controllers.CourseController.UpdateCourse(System.Int32,FinanzautoShool.Domain.Dto.UpdateCourseDto)">
+            <summary>
+            Actualiza la información de un curso existente.
+            </summary>
+            <param name="id">ID del curso a actualizar.</param>
+            <param name="updateCourseDto">Objeto con los nuevos datos del curso.</param>
+            <returns>Mensaje de confirmación o error.</returns>
+            <response code="200">Curso actualizado correctamente.</response>
+            <response code="400">Datos de entrada inválidos.</response>
+            <response code="404">Curso no encontrado.</response>
+            <response code="500">Error interno del servidor.</response>
+            <example>
+            Ejemplo de petición JSON:
+            {
+                "courseName": "Física",
+                "description": "Curso de física cuántica",
+                "teacherId": 2
+            }
+            </example>
+        </member>
+        <member name="M:FinanzautoShool.WebApi.Controllers.QualificationController.CreateQualification(FinanzautoShool.Domain.Dto.CreateQualificationDto)">
+            <summary>
+            Crea una nueva calificación en el sistema.
+            </summary>
+            <param name="createQualification">Objeto que contiene la información de la calificación a crear.</param>
+            <returns>Retorna la calificación creada con su ID.</returns>
+            <response code="201">Calificación creada exitosamente.</response>
+            <response code="400">Datos de entrada inválidos.</response>
+            <response code="500">Error interno del servidor.</response>
+            <example>
+            Ejemplo de petición JSON:
+            {
+                "studentId": 1,
+                "courseId": 2,
+                "score": 85
+            }
+            </example>
+        </member>
+        <member name="M:FinanzautoShool.WebApi.Controllers.QualificationController.GetAllQualification">
+            <summary>
+            Obtiene la lista de todas las calificaciones registradas.
+            </summary>
+            <returns>Lista de calificaciones en el sistema.</returns>
+            <response code="200">Lista obtenida correctamente.</response>
+            <example>
+            Ejemplo de respuesta JSON:
+            [
+                {
+                    "id": 1,
+                    "studentId": 1,
+                    "courseId": 2,
+                    "score": 85,
+                    "qualificationDate": "2025-03-01T10:00:00Z"
+                }
+            ]
+            </example>
+        </member>
+        <member name="M:FinanzautoShool.WebApi.Controllers.QualificationController.GetQualificationById(System.Int32)">
+            <summary>
+            Obtiene la información de una calificación específica por su ID.
+            </summary>
+            <param name="id">ID de la calificación a consultar.</param>
+            <returns>Información de la calificación solicitada.</returns>
+            <response code="200">Calificación encontrada.</response>
+            <response code="404">Calificación no encontrada.</response>
+            <example>
+            Ejemplo de respuesta JSON:
+            {
+                "id": 1,
+                "studentId": 1,
+                "courseId": 2,
+                "score": 85,
+                "qualificationDate": "2025-03-01T10:00:00Z"
+            }
+            </example>
+        </member>
+        <member name="M:FinanzautoShool.WebApi.Controllers.QualificationController.DeleteQualification(System.Int32)">
+            <summary>
+            Elimina una calificación por su ID.
+            </summary>
+            <param name="id">ID de la calificación a eliminar.</param>
+            <returns>Mensaje de confirmación o error.</returns>
+            <response code="200">Calificación eliminada exitosamente.</response>
+            <response code="404">Calificación no encontrada.</response>
+            <response code="500">Error interno al intentar eliminar la calificación.</response>
+            <example>
+            Ejemplo de respuesta JSON:
+            {
+                "message": "La calificación fue eliminada correctamente."
+            }
+            </example>
+        </member>
+        <member name="M:FinanzautoShool.WebApi.Controllers.QualificationController.UpdateQualification(System.Int32,FinanzautoShool.Domain.Dto.UpdateQualificationDto)">
+            <summary>
+            Actualiza la información de una calificación existente.
+            </summary>
+            <param name="id">ID de la calificación a actualizar.</param>
+            <param name="updateQualificationDto">Objeto con los nuevos datos de la calificación.</param>
+            <returns>Mensaje de confirmación o error.</returns>
+            <response code="200">Calificación actualizada correctamente.</response>
+            <response code="400">Datos de entrada inválidos.</response>
+            <response code="404">Calificación no encontrada.</response>
+            <response code="500">Error interno del servidor.</response>
+            <example>
+            Ejemplo de petición JSON:
+            {
+                "score": 90,
+                "qualificationDate": "2025-03-02T12:00:00Z"
+            }
+            </example>
+        </member>
+        <member name="M:FinanzautoShool.WebApi.Controllers.StudentController.CreateStudent(FinanzautoShool.Domain.Dto.CreateStudentDto)">
+            <summary>
+            Crea un nuevo estudiante en el sistema.
+            </summary>
+            <param name="createStudent">Objeto que contiene la información del estudiante a crear.</param>
+            <returns>Retorna el estudiante creado con su ID.</returns>
+            <response code="201">Estudiante creado exitosamente.</response>
+            <response code="400">Datos de entrada inválidos.</response>
+            <response code="500">Error interno del servidor.</response>
+            <example>
+            Ejemplo de petición JSON:
+            {
+                "firstName": "Juan",
+                "lastName": "Pérez",
+                "birthDate": "2000-05-15",
+                "email": "juan.perez@example.com"
+            }
+            </example>
+        </member>
+        <member name="M:FinanzautoShool.WebApi.Controllers.StudentController.GetAllStudent">
+            <summary>
+            Obtiene la lista de todos los estudiantes registrados.
+            </summary>
+            <returns>Lista de estudiantes en el sistema.</returns>
+            <response code="200">Lista obtenida correctamente.</response>
+            <example>
+            Ejemplo de respuesta JSON:
+            [
+                {
+                    "id": 1,
+                    "firstName": "Juan",
+                    "lastName": "Pérez",
+                    "birthDate": "2000-05-15",
+                    "email": "juan.perez@example.com"
+                }
+            ]
+            </example>
+        </member>
+        <member name="M:FinanzautoShool.WebApi.Controllers.StudentController.GetStudentById(System.Int32)">
+            <summary>
+            Obtiene la información de un estudiante específico por su ID.
+            </summary>
+            <param name="id">ID del estudiante a consultar.</param>
+            <returns>Información del estudiante solicitado.</returns>
+            <response code="200">Estudiante encontrado.</response>
+            <response code="404">Estudiante no encontrado.</response>
+            <example>
+            Ejemplo de respuesta JSON:
+            {
+                "id": 1,
+                "firstName": "Juan",
+                "lastName": "Pérez",
+                "birthDate": "2000-05-15",
+                "email": "juan.perez@example.com"
+            }
+            </example>
+        </member>
+        <member name="M:FinanzautoShool.WebApi.Controllers.StudentController.DeleteStudent(System.Int32)">
+            <summary>
+            Elimina un estudiante por su ID.
+            </summary>
+            <param name="id">ID del estudiante a eliminar.</param>
+            <returns>Mensaje de confirmación o error.</returns>
+            <response code="200">Estudiante eliminado exitosamente.</response>
+            <response code="404">Estudiante no encontrado.</response>
+            <response code="500">Error interno al intentar eliminar el estudiante.</response>
+            <example>
+            Ejemplo de respuesta JSON:
+            {
+                "message": "El estudiante fue eliminado correctamente."
+            }
+            </example>
+        </member>
+        <member name="M:FinanzautoShool.WebApi.Controllers.StudentController.UpdateStudent(System.Int32,FinanzautoShool.Domain.Dto.UpdateStudentDto)">
+            <summary>
+            Actualiza la información de un estudiante existente.
+            </summary>
+            <param name="id">ID del estudiante a actualizar.</param>
+            <param name="updateStudentDto">Objeto con los nuevos datos del estudiante.</param>
+            <returns>Mensaje de confirmación o error.</returns>
+            <response code="200">Estudiante actualizado correctamente.</response>
+            <response code="400">Datos de entrada inválidos.</response>
+            <response code="404">Estudiante no encontrado.</response>
+            <response code="500">Error interno del servidor.</response>
+            <example>
+            Ejemplo de petición JSON:
+            {
+                "firstName": "Carlos",
+                "lastName": "Gómez",
+                "email": "carlos.gomez@example.com"
+            }
+            </example>
+        </member>
+        <member name="M:FinanzautoShool.WebApi.Controllers.TeacherController.CreateTeacher(FinanzautoShool.Domain.Dto.CreateTeacherDto)">
+            <summary>
+            Crea un nuevo profesor en el sistema.
+            </summary>
+            <param name="createTeacher">Objeto que contiene la información del profesor a crear.</param>
+            <returns>Retorna el profesor creado con su ID.</returns>
+            <response code="201">Profesor creado exitosamente.</response>
+            <response code="400">Datos de entrada inválidos.</response>
+            <response code="500">Error interno del servidor.</response>
+            <example>
+            POST /CreateTeacher
+            {
+              "firstName": "Juan",
+              "lastName": "Perez",
+              "email": "juan.perez@example.com",
+              "specialty": "Matemáticas"
+            }
+            </example>
+        </member>
+        <member name="M:FinanzautoShool.WebApi.Controllers.TeacherController.GetAllTeacher">
+            <summary>
+            Obtiene la lista de todos los profesores registrados.
+            </summary>
+            <returns>Lista de profesores en el sistema.</returns>
+            <response code="200">Lista obtenida correctamente.</response>
+            <example>
+            GET /GetAllTeacher
+            </example>
+        </member>
+        <member name="M:FinanzautoShool.WebApi.Controllers.TeacherController.GetTeacherById(System.Int32)">
+            <summary>
+            Obtiene la información de un profesor específico por su ID.
+            </summary>
+            <param name="id">ID del profesor a consultar.</param>
+            <returns>Información del profesor solicitado.</returns>
+            <response code="200">Profesor encontrado.</response>
+            <response code="404">Profesor no encontrado.</response>
+            <example>
+            GET /GetTeacherById/1
+            </example>
+        </member>
+        <member name="M:FinanzautoShool.WebApi.Controllers.TeacherController.DeleteTeacher(System.Int32)">
+            <summary>
+            Elimina un profesor por su ID.
+            </summary>
+            <param name="id">ID del profesor a eliminar.</param>
+            <returns>Mensaje de confirmación o error.</returns>
+            <response code="200">Profesor eliminado exitosamente.</response>
+            <response code="404">Profesor no encontrado.</response>
+            <response code="500">Error interno al intentar eliminar el profesor.</response>
+            <example>
+            DELETE /DeleteTeacher/1
+            </example>
+        </member>
+        <member name="M:FinanzautoShool.WebApi.Controllers.TeacherController.UpdateTeacher(System.Int32,FinanzautoShool.Domain.Dto.UpdateTeacherDto)">
+            <summary>
+            Actualiza la información de un profesor existente.
+            </summary>
+            <param name="id">ID del profesor a actualizar.</param>
+            <param name="updateTeacherDto">Objeto con los nuevos datos del profesor.</param>
+            <returns>Mensaje de confirmación o error.</returns>
+            <response code="200">Profesor actualizado correctamente.</response>
+            <response code="400">Datos de entrada inválidos.</response>
+            <response code="404">Profesor no encontrado.</response>
+            <response code="500">Error interno del servidor.</response>
+            <example>
+            PUT /UpdateTeacher/1
+            {
+              "firstName": "Carlos",
+              "lastName": "Gomez",
+              "email": "carlos.gomez@example.com",
+              "specialty": "Física"
+            }
+            </example>
+        </member>
+    </members>
+</doc>

@@ -15,6 +15,23 @@ namespace FinanzautoShool.WebApi.Controllers
             _authService = authService;
         }
 
+        /// <summary>
+        /// Inicia sesión en el sistema y genera un token de autenticación.
+        /// </summary>
+        /// <param name="request">Objeto que contiene el nombre de usuario y contraseña.</param>
+        /// <returns>
+        /// Retorna un token JWT si las credenciales son correctas.  
+        /// En caso contrario, devuelve un estado HTTP 401 (No autorizado).
+        /// </returns>
+        /// <response code="200">Autenticación exitosa. Se devuelve un token JWT.</response>
+        /// <response code="401">Credenciales incorrectas. No autorizado.</response>
+        /// <example>
+        /// Ejemplo de petición JSON:
+        /// {
+        ///     "username": "admin",
+        ///     "password": "admin"
+        /// }
+        /// </example>
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginRequest request)
         {

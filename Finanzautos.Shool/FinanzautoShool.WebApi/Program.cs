@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Reflection;
+using System.Text;
 using FinanzautoShool.Aplication.Services.Auth.Interface;
 using FinanzautoShool.Aplication.Services.Auth.Service;
 using FinanzautoShool.Aplication.Services.CourseService.Interface;
@@ -54,13 +55,13 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Mi API", Version = "v1" });
 
-    // 🔥 Configuración correcta de JWT en Swagger
+    // Configuración correcta de JWT en Swagger
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Description = "Introduce el token en el siguiente formato: Bearer {token}",
         Name = "Authorization",
         In = ParameterLocation.Header,
-        Type = SecuritySchemeType.Http,  // ✅ Corregido
+        Type = SecuritySchemeType.Http,
         Scheme = "Bearer"
     });
 
@@ -78,6 +79,10 @@ builder.Services.AddSwaggerGen(c =>
             new string[] { }
         }
     });
+    // Cargar los comentarios XML
+    var xmlFile = "FinanzautoShool.WebApi.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    c.IncludeXmlComments(xmlPath);
 });
 
 builder.Services.AddDbContext<SchoolDbContext>(options =>

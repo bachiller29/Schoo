@@ -1,8 +1,12 @@
 using FinanzautoShool.Aplication.Services.StudentService.Interface;
 using FinanzautoShool.Aplication.Services.StudentService.Service;
+using FinanzautoShool.Aplication.Services.TeacherService.Interface;
+using FinanzautoShool.Aplication.Services.TeacherService.Service;
 using FinanzautoShool.Infrastructure;
 using FinanzautoShool.Infrastructure.Repositories.StudentRepositories.Interface;
 using FinanzautoShool.Infrastructure.Repositories.StudentRepositories.Repository;
+using FinanzautoShool.Infrastructure.Repositories.TeacherRepositories.Interface;
+using FinanzautoShool.Infrastructure.Repositories.TeacherRepositories.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +22,9 @@ builder.Services.AddDbContext<SchoolDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DbConecction"));
 });
+
+builder.Services.AddScoped<ITeacherService, TeacherService>();
+builder.Services.AddScoped<ITeacherRepository, TeacherRepository>();
 
 builder.Services.AddScoped<IStudentService, StudentService>();
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();

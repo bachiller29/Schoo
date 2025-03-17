@@ -1,0 +1,681 @@
+{
+	"info": {
+		"_postman_id": "8208d0e7-7e00-496e-a2c1-cece5c3d984c",
+		"name": "Finanzautos.Shool",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40424322"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "https://localhost:7228/api/Auth/login",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": [
+								{
+									"key": "algorithm",
+									"value": "HS256",
+									"type": "string"
+								},
+								{
+									"key": "isSecretBase64Encoded",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "payload",
+									"value": "{}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "headerPrefix",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "queryParamKey",
+									"value": "token",
+									"type": "string"
+								},
+								{
+									"key": "header",
+									"value": "{}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7228/api/Auth/login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7228",
+							"path": [
+								"api",
+								"Auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Course",
+			"item": [
+				{
+					"name": "https://localhost:7228/api/Course/CreateCourse",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"courseName\": \"prueba\",\r\n  \"description\": \"prueba\",\r\n  \"teacherId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7228/api/Course/CreateCourse",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7228",
+							"path": [
+								"api",
+								"Course",
+								"CreateCourse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:7228/api/Course/GetAllCourse",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7228/api/Course/GetAllCourse",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7228",
+							"path": [
+								"api",
+								"Course",
+								"GetAllCourse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:7228/api/Course/GetCourseById/2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7228/api/Course/GetCourseById/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7228",
+							"path": [
+								"api",
+								"Course",
+								"GetCourseById",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:7228/api/Course/UpdateCourse/2",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"courseName\": \"test2\",\r\n  \"description\": \"test2\",\r\n  \"teacherId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7228/api/Course/UpdateCourse/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7228",
+							"path": [
+								"api",
+								"Course",
+								"UpdateCourse",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:7228/api/Course/DeleteCourse/2",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7228/api/Course/DeleteCourse/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7228",
+							"path": [
+								"api",
+								"Course",
+								"DeleteCourse",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Qualification",
+			"item": [
+				{
+					"name": "https://localhost:7228/api/Qualification/CreateQualification",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"studentId\": 1,\r\n  \"courseId\": 1,\r\n  \"score\": 2.3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7228/api/Qualification/CreateQualification",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7228",
+							"path": [
+								"api",
+								"Qualification",
+								"CreateQualification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:7228/api/Qualification/GetAllQualification",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7228/api/Qualification/GetQualificationById/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7228",
+							"path": [
+								"api",
+								"Qualification",
+								"GetQualificationById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:7228/api/Qualification/GetAllQualification",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7228/api/Qualification/GetAllQualification",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7228",
+							"path": [
+								"api",
+								"Qualification",
+								"GetAllQualification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:7228/api/Qualification/UpdateQualification/1",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"studentId\": 1,\r\n  \"courseId\": 1,\r\n  \"score\": 1.5,\r\n  \"qualificationDate\": \"2025-03-17T18:44:46.063Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7228/api/Qualification/UpdateQualification/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7228",
+							"path": [
+								"api",
+								"Qualification",
+								"UpdateQualification",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:7228/api/Qualification/DeleteQualification/1",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7228/api/Qualification/DeleteQualification/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7228",
+							"path": [
+								"api",
+								"Qualification",
+								"DeleteQualification",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "https://localhost:7228/api/Student/CreateStudent",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"test1\",\r\n  \"lastName\": \"test1\",\r\n  \"birthDate\": \"2025-03-17\",\r\n  \"email\": \"test1@test1.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7228/api/Student/CreateStudent",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7228",
+							"path": [
+								"api",
+								"Student",
+								"CreateStudent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:7228/api/Student/GetAllStudent",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7228/api/Student/GetAllStudent",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7228",
+							"path": [
+								"api",
+								"Student",
+								"GetAllStudent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:7228/api/Student/GetStudentById/2",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7228/api/Student/GetStudentById/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7228",
+							"path": [
+								"api",
+								"Student",
+								"GetStudentById",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:7228/api/Student/UpdateStudent/1",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"test1\",\r\n  \"lastName\": \"test1\",\r\n  \"birthDate\": \"2025-03-17T18:48:57.309Z\",\r\n  \"email\": \"test1@test1.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7228/api/Student/UpdateStudent/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7228",
+							"path": [
+								"api",
+								"Student",
+								"UpdateStudent",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:7228/api/Student/DeleteStudent/1",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7228/api/Student/DeleteStudent/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7228",
+							"path": [
+								"api",
+								"Student",
+								"DeleteStudent",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Teacher",
+			"item": [
+				{
+					"name": "https://localhost:7228/api/Teacher/CreateTeacher",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"prueba\",\r\n  \"lastName\": \"prueba\",\r\n  \"email\": \"prueba@prueba.com\",\r\n  \"specialty\": \"prueba\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7228/api/Teacher/CreateTeacher",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7228",
+							"path": [
+								"api",
+								"Teacher",
+								"CreateTeacher"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:7228/api/Teacher/GetAllTeacher",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7228/api/Teacher/GetAllTeacher",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7228",
+							"path": [
+								"api",
+								"Teacher",
+								"GetAllTeacher"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:7228/api/Teacher/GetTeacherById/1",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7228/api/Teacher/GetTeacherById/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7228",
+							"path": [
+								"api",
+								"Teacher",
+								"GetTeacherById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:7228/api/Teacher/UpdateTeacher/1",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"prueba1\",\r\n  \"lastName\": \"preuba2\",\r\n  \"email\": \"preuba2@preuba2.com\",\r\n  \"specialty\": \"preuba2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7228/api/Teacher/UpdateTeacher/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7228",
+							"path": [
+								"api",
+								"Teacher",
+								"UpdateTeacher",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://localhost:7228/api/Teacher/DeleteTeacher/1",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7228/api/Teacher/DeleteTeacher/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7228",
+							"path": [
+								"api",
+								"Teacher",
+								"DeleteTeacher",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

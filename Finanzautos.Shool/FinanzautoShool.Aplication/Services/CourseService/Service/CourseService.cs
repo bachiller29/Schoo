@@ -3,6 +3,8 @@ using FinanzautoShool.Domain.Dto;
 using FinanzautoShool.Domain.Entity;
 using FinanzautoShool.Infrastructure.Repositories.CourseRepositories.Interface;
 using FinanzautoShool.Infrastructure.Repositories.TeacherRepositories.Interface;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 
 namespace FinanzautoShool.Aplication.Services.CourseService.Service
 {
@@ -56,21 +58,32 @@ namespace FinanzautoShool.Aplication.Services.CourseService.Service
                 };
             }
 
-            var isDeleted = await _repository.DeleteCourse(id);
-            if (!isDeleted)
+            try
+            {
+                var isDeleted = await _repository.DeleteCourse(id);
+                if (!isDeleted)
+                {
+                    return new DeleteResult
+                    {
+                        Message = "No se pudo eliminar el curso.",
+                        IsSuccess = false
+                    };
+                }
+
+                return new DeleteResult
+                {
+                    Message = "El curso fue eliminado correctamente.",
+                    IsSuccess = true
+                };
+            }
+            catch (DbUpdateException ex) when (ex.InnerException is SqlException sqlEx && sqlEx.Number == 547)
             {
                 return new DeleteResult
                 {
-                    Message = "No se pudo eliminar el curso.",
+                    Message = "No se puede eliminar el curso porque tiene calificaciones asociadas. Elimine primero las calificaciones.",
                     IsSuccess = false
                 };
             }
-
-            return new DeleteResult
-            {
-                Message = "El curso fue eliminado correctamente.",
-                IsSuccess = true
-            };
         }
 
         public async Task<IEnumerable<CourseDto>> GetAllCourse()

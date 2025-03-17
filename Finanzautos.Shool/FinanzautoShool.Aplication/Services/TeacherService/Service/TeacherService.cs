@@ -2,6 +2,8 @@
 using FinanzautoShool.Domain.Dto;
 using FinanzautoShool.Domain.Entity;
 using FinanzautoShool.Infrastructure.Repositories.TeacherRepositories.Interface;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 
 namespace FinanzautoShool.Aplication.Services.TeacherService.Service
 {
@@ -49,21 +51,32 @@ namespace FinanzautoShool.Aplication.Services.TeacherService.Service
                 };
             }
 
-            var isDeleted = await _repository.DeleteTeacher(id);
-            if (!isDeleted)
+            try
+            {
+                var isDeleted = await _repository.DeleteTeacher(id);
+                if (!isDeleted)
+                {
+                    return new DeleteResult
+                    {
+                        Message = "No se pudo eliminar el profesor.",
+                        IsSuccess = false
+                    };
+                }
+
+                return new DeleteResult
+                {
+                    Message = "El profesor fue eliminado correctamente.",
+                    IsSuccess = true
+                };
+            }
+            catch (DbUpdateException ex) when (ex.InnerException is SqlException sqlEx && sqlEx.Number == 547)
             {
                 return new DeleteResult
                 {
-                    Message = "No se pudo eliminar el profesor.",
+                    Message = "No se puede eliminar el profesor porque tiene cursos asociados. Debe eliminar primero los cursos.",
                     IsSuccess = false
                 };
             }
-
-            return new DeleteResult
-            {
-                Message = "El profesor fue eliminado correctamente.",
-                IsSuccess = true
-            };
         }
 
         public async Task<IEnumerable<TeacherDto>> GetAllTeacher()

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FinanzautoShool.WebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c6fc08a638c65fc6f611cd9a4246d263b683e252")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c16f8c6d821be6a5564efeb9383f47ce652895a5")]
 [assembly: System.Reflection.AssemblyProductAttribute("FinanzautoShool.WebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FinanzautoShool.WebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

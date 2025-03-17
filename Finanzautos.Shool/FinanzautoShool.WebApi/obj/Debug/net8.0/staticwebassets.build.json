@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "hstZ2x5znGt9O2MJa2IkhdxJjvYAYKJpROqQQqrujEY=",
+  "Source": "FinanzautoShool.WebApi",
+  "BasePath": "_content/FinanzautoShool.WebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

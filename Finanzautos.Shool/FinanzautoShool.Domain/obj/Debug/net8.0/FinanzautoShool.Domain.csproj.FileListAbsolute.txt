@@ -1,0 +1,12 @@
+C:\Repo\Test\Back\Schoo\Finanzautos.Shool\FinanzautoShool.Domain\bin\Debug\net8.0\FinanzautoShool.Domain.deps.json
+C:\Repo\Test\Back\Schoo\Finanzautos.Shool\FinanzautoShool.Domain\bin\Debug\net8.0\FinanzautoShool.Domain.dll
+C:\Repo\Test\Back\Schoo\Finanzautos.Shool\FinanzautoShool.Domain\bin\Debug\net8.0\FinanzautoShool.Domain.pdb
+C:\Repo\Test\Back\Schoo\Finanzautos.Shool\FinanzautoShool.Domain\obj\Debug\net8.0\FinanzautoShool.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repo\Test\Back\Schoo\Finanzautos.Shool\FinanzautoShool.Domain\obj\Debug\net8.0\FinanzautoShool.Domain.AssemblyInfoInputs.cache
+C:\Repo\Test\Back\Schoo\Finanzautos.Shool\FinanzautoShool.Domain\obj\Debug\net8.0\FinanzautoShool.Domain.AssemblyInfo.cs
+C:\Repo\Test\Back\Schoo\Finanzautos.Shool\FinanzautoShool.Domain\obj\Debug\net8.0\FinanzautoShool.Domain.csproj.CoreCompileInputs.cache
+C:\Repo\Test\Back\Schoo\Finanzautos.Shool\FinanzautoShool.Domain\obj\Debug\net8.0\FinanzautoShool.Domain.sourcelink.json
+C:\Repo\Test\Back\Schoo\Finanzautos.Shool\FinanzautoShool.Domain\obj\Debug\net8.0\FinanzautoShool.Domain.dll
+C:\Repo\Test\Back\Schoo\Finanzautos.Shool\FinanzautoShool.Domain\obj\Debug\net8.0\refint\FinanzautoShool.Domain.dll
+C:\Repo\Test\Back\Schoo\Finanzautos.Shool\FinanzautoShool.Domain\obj\Debug\net8.0\FinanzautoShool.Domain.pdb
+C:\Repo\Test\Back\Schoo\Finanzautos.Shool\FinanzautoShool.Domain\obj\Debug\net8.0\ref\FinanzautoShool.Domain.dll

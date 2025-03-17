@@ -8,13 +8,14 @@
 
   <ItemGroup>
     <Folder Include="Services\CourseService\Interface\" />
-    <Folder Include="Services\CourseService\Service\" />
     <Folder Include="Services\QualificationService\Interface\" />
-    <Folder Include="Services\QualificationService\Service\" />
     <Folder Include="Services\StudentService\Interface\" />
-    <Folder Include="Services\StudentService\Service\" />
     <Folder Include="Services\TeacherService\Interface\" />
-    <Folder Include="Services\TeacherService\Service\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FinanzautoShool.Domain\FinanzautoShool.Domain.csproj" />
+    <ProjectReference Include="..\FinanzautoShool.Infrastructure\FinanzautoShool.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

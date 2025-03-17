@@ -109,6 +109,115 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "FinanzautoShool.WebApi.Controllers.QualificationController",
+    "Method": "CreateQualification",
+    "RelativePath": "api/Qualification/CreateQualification",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createQualification",
+        "Type": "FinanzautoShool.Domain.Dto.CreateQualificationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FinanzautoShool.Domain.Dto.QualificationDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FinanzautoShool.WebApi.Controllers.QualificationController",
+    "Method": "DeleteQualification",
+    "RelativePath": "api/Qualification/DeleteQualification/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FinanzautoShool.WebApi.Controllers.QualificationController",
+    "Method": "GetAllQualification",
+    "RelativePath": "api/Qualification/GetAllQualification",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[FinanzautoShool.Domain.Dto.QualificationDto, FinanzautoShool.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FinanzautoShool.WebApi.Controllers.QualificationController",
+    "Method": "GetQualificationById",
+    "RelativePath": "api/Qualification/GetQualificationById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FinanzautoShool.Domain.Dto.TeacherDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FinanzautoShool.WebApi.Controllers.QualificationController",
+    "Method": "UpdateQualification",
+    "RelativePath": "api/Qualification/UpdateQualification/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateQualificationDto",
+        "Type": "FinanzautoShool.Domain.Dto.UpdateQualificationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "FinanzautoShool.WebApi.Controllers.StudentController",
     "Method": "CreateStudent",
     "RelativePath": "api/Student/CreateStudent",
